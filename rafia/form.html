@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .containermy-4 {
+            padding-left: 40px;
+            padding-top: 40px;
+        }
+        .user{
+            padding-right: 100px;
+        }
+        .password{
+            padding-right: 105px;
+        }
+        .cpassword{
+            padding-right: 45px;
+        }
+        .form-group{
+            padding-top: 40px;
+        }
+        #emai{
+            padding-right: 125px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="containermy-4 ">
+
+        <h1 class="text-center">Signup Here</h1>
+        <form action="signup.php" method="post" id="myform" class="myform">
+
+            <div class="form-group">
+                <label for="email" class="user" id="emai">Email</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+            </div>
+
+            <div class="form-group">
+                <label for="username" class="user">Username</label>
+                <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cpassword" class="cpassword">Confirm Password</label>
+                <input type="password" class="form-control" id="cpassword" name="cpassword" required>
+
+                <small id="emailHelp" class="form-text text-muted">
+                    <br><strong>Make Sure to type the same password</strong><br><br>
+                </small>
+            </div>
+
+            <button type="submit" class="btn btn-primary" onclick="validateForm()">
+                SignUp
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var form = document.getElementById("myform");
+            var fields = form.getElementsByTagName("input");
+
+            for (var i = 0; i < fields.length; i++) {
+                if (fields[i].value === "") {
+                    alert("Please fill in all fields");
+                    return false;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
