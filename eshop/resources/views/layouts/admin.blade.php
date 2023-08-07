@@ -9,27 +9,28 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-    
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-    <link href="{{ asset ('frontend/css/bootstrap5.css') }}" rel="stylesheet">
-     
-
-
-
-
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="{{ asset('admin/css/material-dashboard.css') }}" rel="stylesheet" />
 </head>
 <body>
-    <script src="{{ asset('assets/js/core/jquery.3.2.1.min.js') }}" defer></script>
-    <script src="{{ asset('assets/js/core/popper.min.js') }}" defer></script>
-    <script src="{{ asset('assets/js/core/bootstrap.min.js') }}" defer></script>
-   
+    <div class="wrapper">
+        @include('layouts.inc.sidebar')
+
+        <div class="main-panel">
+            @include('layouts.inc.navbar')
+            <div class="content">
+            @yield('content')
+            </div>
+            @include('layouts.inc.footer')
+        </div>
+    </div>
     <!-- Scripts -->
-    
-   
->
+    <script src="{{ asset('admin/js/popper.min.js') }}" defer></script>
+    <script src="{{ asset('admin/js/bootstrap-material-design.min.js') }}" defer></script>
+    <script src="{{ asset('admin/js/perfect-scrollbar.jquery.min.js') }}" defer></script>
+    <script src="{{ asset('admin/js/jquery.min.js') }}" defer></script>
+
 </body>
 </html>
